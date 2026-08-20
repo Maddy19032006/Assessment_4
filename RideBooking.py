@@ -43,10 +43,7 @@ class RideBooking:
         if vehicle_type not in self.CAPACITY:
             return {"status": "REJECTED", "reason": "Invalid vehicle type"}
 
-        if (
-            passengers <= 0
-            or passengers > self.CAPACITY[vehicle_type]
-        ):
+        if passengers <= 0 or passengers > self.CAPACITY[vehicle_type]:
             return {
                 "status": "REJECTED",
                 "reason": "Invalid passenger count for vehicle",
